@@ -1,10 +1,10 @@
 var worder = angular.module('Worder', []);
 
 worder.controller('ApplicationController', [
-	'$scope', '$http', 'dictionary'
-	function($scope, $http, dictionary) {
+	'$scope', 'dictionary',
+	function($scope, dictionary) {
 		$scope.getRandomWord = function(){
-			dictionary.getWords(20)
+			console.log(dictionary.getWords(20));
 		}
 	}
 ]);
