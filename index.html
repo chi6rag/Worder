@@ -1,12 +1,36 @@
 <html ng-app="Worder">
 <head>
 	<title>Worder</title>
+	
+	<!-- Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<!-- Bower Dependencies | Vendor Scripts -->
 	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+
+	<!-- Application Scripts -->
 	<script type="text/javascript" src="app.js"></script>
+
 </head>
 <body ng-controller="ApplicationController">
 	{{(1+1==2) ? "Angular Loads!" : "Doesn't Load!"}}
 	<br />
-	{{ getRandomWord() }}
+	<div class="row">
+		<div class="word-wrapper col-md-10 col-md-offset-1">
+			{{ getRandomWord() }}
+			<p>{{ word[0] }}</p>
+			<p>{{ word[1] }}</p>
+		</div>
+		<div class="button-left col-md-5 col-md-offset-1">
+			<span class="button-left-text">Show</span>
+		</div>
+		<div class="button-right col-md-5" ng-click="getRandomWord()">
+			<span class="button-right-text">I Know It</span>
+		</div>
+	</div>
 </body>
 </html>
