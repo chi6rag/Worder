@@ -1,6 +1,12 @@
 .word-wrapper {
-	height: 60vh;
+	height: 40vh;
 	background: #F3F3F5;
+}
+
+.word {
+	font-family: 'Lato', sans-serif;
+	text-align: center;
+	font-size: 10vmin;
 }
 
 .button-left, .button-right {
@@ -22,7 +28,7 @@
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
-	font-size: 1.6em;
+	font-size: 4vmin;
 	font-weight: 100;
 	color: whitesmoke;
 }
