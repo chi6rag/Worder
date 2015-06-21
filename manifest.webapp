@@ -2,7 +2,7 @@
   "version": "0.1",
   "name": "Worder",
   "description": "Worder is an awesome and interactive vocabulary trainer",
-  "launch_path": "./index.html",
+  "launch_path": "http://www.chi6rag.net/Worder/index.html",
   "icons": {
     "16": "http://res.cloudinary.com/chi6rag/image/upload/v1434896073/Worder/glossary.png",
     "48": "http://res.cloudinary.com/chi6rag/image/upload/v1434896073/Worder/glossary.png",
