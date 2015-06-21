@@ -1,20 +1,50 @@
-var worder = angular.module('Worder', ['LocalStorageModule']);
+var worder = angular.module('Worder', ['LocalStorageModule', 'ngToast']);
 
 worder.controller('ApplicationController', [
-	'$scope', 'dictionary',
-	function($scope, dictionary) {
+	'$scope', 'dictionary', 'ngToast',
+	function($scope, dictionary, ngToast) {
+
+		var wordList = dictionary.getWords(20);
 		
-		wordList = dictionary.getWords(20);
-		
+		var formatWord = function(word){
+			var updatedWord = "";
+			updatedWord = updatedWord.concat(word[0]);
+			var wordLength = word.length;
+			for(var i=1; i < wordLength - 1; i++){
+				updatedWord = updatedWord.concat("*");
+			}
+			updatedWord = updatedWord.concat(word[wordLength-1])
+			return updatedWord;
+		}
+
+		$scope.displayWord = false;
+
+		$scope.checker = function(){
+			var res = prompt("What's the word?");
+			if (res === $scope.word[0]){
+				ngToast.create(['Awesome!', "You're Doing Good", "Brilliant!"][Math.floor(Math.random() * 3)]);
+				$scope.getRandomWord();
+			} else {
+				alert("Oops! The word was " + $scope.word[0]);
+			}
+		}
+
 		$scope.getRandomWord = function(){
+			console.log("Inside Random Word");
+			$scope.displayWord = false;
 			var wordObject = wordList[Math.floor(Math.random() * 20)];
 			var wordArray = [];
 			for(var key in wordObject){
 				wordArray.push(key);
 				wordArray.push(wordObject[key]);
 			}
+			wordArray.push(formatWord(key));
 			$scope.word = wordArray;
-		}
+		};
+
+		$scope.showWord = function(event){
+			console.log("asdf");
+		};
 
 	}
 ]);
