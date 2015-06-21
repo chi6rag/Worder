@@ -42,8 +42,8 @@ worder.controller('ApplicationController', [
 			$scope.word = wordArray;
 		};
 
-		$scope.showWord = function(event){
-			console.log("asdf");
+		$scope.showWord = function(){
+			return $scope.word[0];
 		};
 
 	}
