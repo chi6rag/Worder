@@ -2,6 +2,12 @@ body {
 	background: url(http://res.cloudinary.com/chi6rag/image/upload/v1434889782/General/1795633_1654912291409131_4450042738126450817_n.jpg);
 }
 
+.word-row {
+	position: relative;
+	top: 40%;
+	transform: translateY(-50%);
+}
+
 .word-wrapper {
 	height: 40vh;
 	background: #EAF2F5;
